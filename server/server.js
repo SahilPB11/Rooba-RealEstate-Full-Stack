@@ -1,6 +1,8 @@
+import connectDb from "./ConnectDB/connectDb.js";
 import { app } from "./index.js";
-const port = 3000;
+const port = process.env.PORT;
 
-app.listen(port, () => {
-  console.log(`Server is listening on port number ${port}`);
-});
+// here first i am connecting with database and then i am starting the server
+connectDb().then(
+  app.listen(port, () => console.log(`Server is Working on ${port}`))
+);
