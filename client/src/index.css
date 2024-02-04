@@ -33,6 +33,31 @@
   background: transparent;
 }
 .active {
-font-size: 20px;
-font-weight: 500;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Apply styles to the button class */
+.buttonStyles {
+  height: 52px;
+  padding: 17px 31px;
+  background-color: rgba(67, 117, 251, 1);
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Tertiary navigation link styles */
+.tertiary-link {
+  text-decoration: none;
+  font-family: "Switzer";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42.24px;
+  letter-spacing: -2%;
+  color: #000000;
 }

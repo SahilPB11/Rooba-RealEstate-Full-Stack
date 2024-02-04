@@ -3,6 +3,8 @@ import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
 import NavSidebar from "../components/home/NavSidebar";
 import { useAuth } from "../contextApi/useAuth"; // Import your AuthContext path
+import TopBar from "../components/TopBar";
+import TertiaryNav from "../components/TeritaryNav";
 
 const HomePage = () => {
   const { user } = useAuth(); // Assuming your AuthContext provides user information
@@ -11,10 +13,13 @@ const HomePage = () => {
   const shouldRedirectToMarket = !user || window.location.pathname === "/";
 
   return (
-    <div>
-      {shouldRedirectToMarket && <Navigate to="/home/market" />}
+    <div style={{ display: "flex" }}>
       <NavSidebar />
-      <Outlet />
+      <div style={{ flex: 1 }}>
+        <TopBar />
+        <TertiaryNav />
+        <Outlet />
+      </div>
     </div>
   );
 };
