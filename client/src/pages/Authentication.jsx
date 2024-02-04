@@ -35,8 +35,8 @@ const Authentication = () => {
         {/* <h1 className="text-3xl font-bold mb-4">Welcome to Our Platform</h1>
           <p className="text-lg">Discover amazing features...</p>
         </div> */}
-        <div className="p-5">
-          <img src="./images/rooba4.jpeg" alt="" />
+        <div className="p-5 opacity-50">
+          <img src="./images/rooba.jpeg" alt="" />
         </div>
       </div>
     </div>

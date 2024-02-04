@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
 import userRouter from "./routes/userRoute.js";
 import userStats from "./routes/userStat.js";
+import cors from "cors";
 
 // here i am exporting app to server.js file
 export const app = express();
@@ -13,6 +14,15 @@ export const app = express();
 config({
   path: "./.env",
 });
+
+// Set CORS configuration based on environment variable
+const url = process.env.cors_Url;
+app.use(
+  cors({
+    credentials: true,
+    origin: url,
+  })
+);
 
 // middlewares
 app.use(bodyParser.json());
