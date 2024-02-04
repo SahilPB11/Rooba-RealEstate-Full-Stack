@@ -6,7 +6,7 @@ import { isValidPassword } from "../utils/utility.js"; // Import utility functio
 import ErrorHandler from "../utils/ErrorHandler.js"; // Import custom error handler
 
 // Controller function for creating a new user
-export const createUser = async (req, res) => {
+export const createUser = async (req, res, next) => {
   try {
     const { name, email, age, country, password } = req.body;
 
@@ -36,15 +36,12 @@ export const createUser = async (req, res) => {
     // Respond with a success message
     res.status(201).json({ message: "User created successfully." });
   } catch (error) {
-    // Handle errors and respond with appropriate status code and error message
-    const errorMessage =
-      error instanceof ErrorHandler ? error.message : "Invalid input data.";
-    res.status(error.statusCode || 400).json({ error: errorMessage });
+    next(error);
   }
 };
 
 // Controller function for user login
-export const loginUser = async (req, res) => {
+export const loginUser = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
@@ -55,16 +52,9 @@ export const loginUser = async (req, res) => {
     if (!user || !(await bcrypt.compare(password, user.password))) {
       throw new ErrorHandler("Invalid email or password.", 401);
     }
-
     // Assuming sendCookie is a middleware for sending a cookie
-    sendCookie(res, user);
-
-    // Respond with a success message
-    res.json({ message: "Login successful." });
+    sendCookie(res, user, 200, `Welcome back ${user.name}`);
   } catch (error) {
-    // Handle errors and respond with appropriate status code and error message
-    const errorMessage =
-      error instanceof ErrorHandler ? error.message : "Invalid input data.";
-    res.status(error.statusCode || 400).json({ error: errorMessage });
+    next(error);
   }
 };

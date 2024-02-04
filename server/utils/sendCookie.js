@@ -1,11 +1,12 @@
 import jwt from "jsonwebtoken";
 import ErrorHandler from "./ErrorHandler.js";
+
 const sendCookie = (res, user, statusCode = 201, message) => {
   try {
     const token = jwt.sign({ _id: user._id }, process.env.jwt_Secret, {
       expiresIn: "20m",
     });
-
+    const { password, ...userInfo } = user._doc;
     return res
       .status(statusCode)
       .cookie("token", token, {
@@ -17,8 +18,7 @@ const sendCookie = (res, user, statusCode = 201, message) => {
       .json({
         success: true,
         message: message,
-        username: user.username,
-        _id: user._id,
+        user: userInfo,
       });
   } catch (error) {
     console.error("Error signing JWT:", error);
