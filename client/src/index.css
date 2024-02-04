@@ -32,3 +32,7 @@
 ::-webkit-scrollbar-track:hover {
   background: transparent;
 }
+.active {
+font-size: 20px;
+font-weight: 500;
+}
