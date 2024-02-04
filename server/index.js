@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
 import userRouter from "./routes/userRoute.js";
+import userStats from "./routes/userStat.js";
 
 // here i am exporting app to server.js file
 export const app = express();
@@ -21,6 +22,7 @@ app.use(cookieParser());
 
 // routes
 app.use("/user", userRouter);
+app.use("/stats", userStats);
 app.use("/", (req, res) => res.json("thanks for visiting here"));
 
 // error handler middleware
