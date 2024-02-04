@@ -1,12 +1,18 @@
 import jwt from "jsonwebtoken";
 import ErrorHandler from "./ErrorHandler.js";
 
+// Function to send a cookie with a JWT token and user information
 const sendCookie = (res, user, statusCode = 201, message) => {
   try {
+    // Generate a JWT token with the user's ID
     const token = jwt.sign({ _id: user._id }, process.env.jwt_Secret, {
       expiresIn: "20m",
     });
+
+    // Extract sensitive information (like password) from user data
     const { password, ...userInfo } = user._doc;
+
+    // Send the token as a cookie and user information in the response
     return res
       .status(statusCode)
       .cookie("token", token, {
@@ -21,6 +27,7 @@ const sendCookie = (res, user, statusCode = 201, message) => {
         user: userInfo,
       });
   } catch (error) {
+    // Log any errors during the token signing process
     console.error("Error signing JWT:", error);
 
     // Throw a custom error using ErrorHandler

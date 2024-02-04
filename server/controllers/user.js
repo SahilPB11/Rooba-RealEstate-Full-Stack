@@ -58,3 +58,21 @@ export const loginUser = async (req, res, next) => {
     next(error);
   }
 };
+
+// Controller function for user logout
+export const logout = (req, res, next) => {
+  try {
+    // Clear the token cookie
+    res.clearCookie("token", {
+      httpOnly: true,
+      sameSite: process.env.NODE_ENV === "development" ? "lax" : "none",
+      secure: process.env.NODE_ENV === "development" ? false : true,
+    });
+
+    // Respond with a success message
+    res.status(200).json({ success: true, message: "Logout successful." });
+  } catch (error) {
+    // Pass any errors to the error handling middleware using ErrorHandler
+    next(new ErrorHandler("Failed to logout", 500));
+  }
+};
