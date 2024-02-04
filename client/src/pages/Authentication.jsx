@@ -29,13 +29,12 @@ const Authentication = () => {
           {isLoginForm ? <LoginForm /> : <SignupForm />}
 
           {/* Toggle Button */}
-          {/* Toggle Button */}
 
           {isLoginForm ? (
             <p>
               Don't have an account?{" "}
               <span
-                className="text-white text-md mb-2 focus:outline-none underline hover:text-blue-300 fw-bolder"
+                className="text-white text-md mb-2 focus:outline-none underline hover:text-blue-300 fw-bolder   "
                 onClick={toggleForm}
               >
                 Sign Up

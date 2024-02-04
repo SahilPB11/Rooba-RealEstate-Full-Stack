@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import PasswordInput from "../PasswordInput";
+import { useAuth } from "../../contextApi/useAuth";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const { login } = useAuth();
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -18,11 +20,9 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://localhost:3000/user/login",
-        formData
-      );
-      console.log(res.data);
+      const res = await axios.post("/user/login", formData);
+      console.log(res);
+      if (res.status == 200) login(res);
       setFormData({
         email: "",
         password: "",
