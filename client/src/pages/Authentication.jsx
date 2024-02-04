@@ -1,10 +1,16 @@
-// Authentication.js
-import React from "react";
+import React, { useState } from "react";
 import SignupForm from "../components/UserAuth/SignupForm";
+import LoginForm from "../components/UserAuth/LoginForm";
 
 const Authentication = () => {
   // Add this line to prevent scrolling on the entire page
   document.body.style.overflow = "hidden";
+
+  const [isLoginForm, setIsLoginForm] = useState(true);
+
+  const toggleForm = () => {
+    setIsLoginForm((prevValue) => !prevValue);
+  };
 
   return (
     <div
@@ -19,8 +25,33 @@ const Authentication = () => {
             <img src="./logo/logo.svg" alt="Your Logo" className="w-16 h-16" />
           </div>
 
-          {/* Signup Form */}
-          <SignupForm />
+          {/* Conditional Rendering of Form */}
+          {isLoginForm ? <LoginForm /> : <SignupForm />}
+
+          {/* Toggle Button */}
+          {/* Toggle Button */}
+
+          {isLoginForm ? (
+            <p>
+              Don't have an account?{" "}
+              <span
+                className="text-white text-md mb-2 focus:outline-none underline hover:text-blue-300 fw-bolder"
+                onClick={toggleForm}
+              >
+                Sign Up
+              </span>
+            </p>
+          ) : (
+            <p>
+              Already have an account?{" "}
+              <span
+                className="text-white text-md mb-2 focus:outline-none underline hover:text-blue-300 fw-bolder"
+                onClick={toggleForm}
+              >
+                Log In
+              </span>
+            </p>
+          )}
         </div>
       </div>
 
@@ -29,12 +60,6 @@ const Authentication = () => {
         className="md:w-1/2 hidden md:block relative"
         style={{ height: "100vh" }}
       >
-        {/* <div className="absolute inset-0 bg-black bg-opacity-50 p-6 flex flex-col justify-start m-5 mb-0"> */}
-        {/* Content in the overlay */}
-        {/* You can add additional content or remove this div based on your needs */}
-        {/* <h1 className="text-3xl font-bold mb-4">Welcome to Our Platform</h1>
-          <p className="text-lg">Discover amazing features...</p>
-        </div> */}
         <div className="p-5 opacity-50">
           <img src="./images/rooba.jpeg" alt="" />
         </div>
