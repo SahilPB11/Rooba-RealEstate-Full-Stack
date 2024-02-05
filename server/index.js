@@ -20,7 +20,7 @@ const url = process.env.cors_Url;
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: "https://rooba-realestate-full-stack.onrender.com",
   })
 );
 
