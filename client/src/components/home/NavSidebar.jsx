@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contextApi/useAuth";
-
+import axios from "axios";
 const NavItem = ({ to, label, onClick }) => (
   <NavLink
     to={`${to}`}
@@ -17,11 +17,15 @@ const NavSidebar = () => {
   const { logout } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    setTimeout(() => {
-      navigate("/");
-    }, 1500);
+  const handleLogout = async () => {
+    const res = await axios.get("/user/logout");
+    console.log(res);
+    if (res.status == 200) {
+      logout();
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    }
   };
 
   return (
