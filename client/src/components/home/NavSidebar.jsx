@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contextApi/useAuth";
 
 const NavItem = ({ to, label, onClick }) => (
   <NavLink
-    to={`/home${to}`}
+    to={`${to}`}
     onClick={onClick}
     className="w-full h-36 flex items-center justify-center border border-gray-300"
     activeClassName="active"
@@ -19,12 +19,14 @@ const NavSidebar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/");
+    setTimeout(() => {
+      navigate("/");
+    }, 1500);
   };
 
   return (
     <div
-      className="flex flex-col bg-white p-1"
+    className="flex flex-col bg-white  " // Apply sticky and top-0 to make it stick to the top
       style={{ width: "320px", height: "1020px" }}
     >
       <div className="w-full h-48 flex items-center justify-center border border-gray-300">

@@ -2,12 +2,12 @@ import React from "react";
 import axios from "axios";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./contextApi/useAuth";
-import HomePage from "./pages/HomePage";
-import Authentication from "./pages/Authentication";
+import Authentication from "./pages/Authentication"; // Import the updated Authentication component
 import CartPage from "./pages/CartPage";
 import MarketPage from "./pages/MarketPage";
 import SettingsPage from "./pages/SettingsPage";
-import PageNotFound from "./pages/PageNotFound"; // Import your PageNotFound component
+import PageNotFound from "./pages/PageNotFound";
+import NavSidebar from "./components/home/NavSidebar"; // Import the NavSidebar component
 
 function App() {
   const { user } = useAuth();
@@ -15,18 +15,31 @@ function App() {
   axios.defaults.withCredentials = true;
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={user ? <Navigate to="/home" /> : <Authentication />}
-      />
-      <Route path="/home" element={user ? <HomePage /> : <Navigate to="/" />}>
-        <Route path="cart" element={<CartPage />} />
-        <Route path="market" element={<MarketPage />} />
-        <Route path="settings" element={<SettingsPage />} />
-      </Route>
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+    <div className="flex">
+      {user && <NavSidebar />}{" "}
+      {/* Render NavSidebar only if the user is authenticated */}
+      <div className={user ? "flex-grow" : "w-full"}>
+        <Routes>
+          <Route
+            path="/"
+            element={user ? <Navigate to="/market" /> : <Authentication />}
+          />
+          <Route
+            path="/cart"
+            element={user ? <CartPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/market"
+            element={user ? <MarketPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/settings"
+            element={user ? <SettingsPage /> : <Navigate to="/" />}
+          />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 

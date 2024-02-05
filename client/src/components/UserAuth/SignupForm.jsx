@@ -74,7 +74,7 @@ const SignUpForm = () => {
             </label>
             {field.type === "select" ? (
               <select
-                className="w-full px-4 py-2 border-b border-gray-500 focus:outline-none focus:border-blue-500 text-white"
+                className="w-full px-4 py-2 border-b border-gray-500 focus:outline-none focus:border-blue-500 text-white scroll"
                 name={field.key}
                 value={formData[field.key]}
                 onChange={handleChange}
