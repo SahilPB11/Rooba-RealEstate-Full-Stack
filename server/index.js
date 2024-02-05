@@ -20,7 +20,7 @@ const url = process.env.cors_Url;
 app.use(
   cors({
     credentials: true,
-    origin: "https://rooba-real-estate-full-stack.vercel.app",
+    origin: url,
   })
 );
 

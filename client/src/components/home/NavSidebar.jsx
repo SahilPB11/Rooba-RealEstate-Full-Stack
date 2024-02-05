@@ -20,7 +20,6 @@ const NavSidebar = () => {
 
   const handleLogout = async () => {
     const res = await axios.get("/user/logout");
-    console.log(res);
     if (res.status === 200) {
       logout();
       navigate("/");
