@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TopBar from "../components/marketCompo/TopBar";
 
 const CartPage = () => {
