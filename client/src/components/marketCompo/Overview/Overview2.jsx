@@ -7,36 +7,54 @@ const Overview2 = () => {
       completed: false,
       buttonText: "Complete",
       downloadText: "Receipt",
+      completionDate: null,
+      dataAfterComple1: "Good Job",
+      dataAfterComple2: "Complete",
     },
     {
       checked: false,
       completed: false,
       buttonText: "Pay",
       downloadText: "Download",
+      completionDate: null,
+      dataAfterComple1: "5% discount",
+      dataAfterComple2: "1,00,000",
     },
     {
       checked: false,
       completed: false,
       buttonText: "Pay",
       downloadText: "Download",
+      completionDate: null,
+      dataAfterComple1: "",
+      dataAfterComple2: "Complete",
     },
     {
       checked: false,
       completed: false,
       buttonText: "Complete",
       downloadText: "Download",
+      completionDate: null,
+      dataAfterComple1: "We will get back in three minutes",
+      dataAfterComple2: "Complete",
     },
     {
       checked: false,
       completed: false,
       buttonText: "Complete",
       downloadText: "Download",
+      completionDate: null,
+      dataAfterComple1: "",
+      dataAfterComple2: "Complete",
     },
     {
       checked: false,
       completed: false,
       buttonText: "Complete",
       downloadText: "Download",
+      completionDate: null,
+      dataAfterComple1: "",
+      dataAfterComple2: "Complete",
     },
   ]);
 
@@ -53,7 +71,11 @@ const Overview2 = () => {
   const handleComplete = (index) => {
     const updatedCheckboxes = checkboxes.map((item, i) => {
       if (i === index) {
-        return { ...item, completed: true };
+        return {
+          ...item,
+          completed: true,
+          completionDate: new Date().toLocaleDateString(),
+        };
       }
       return item;
     });
@@ -74,7 +96,7 @@ const Overview2 = () => {
               data.checked ? "completed" : "incomplete"
             }`}
           >
-            <div className="w-1/2 flex items-start">
+            <div className=" p-4 w-1/2 flex flex-col items-start">
               <div className="w-1/2 flex items-center justify-start">
                 <input
                   type="checkbox"
@@ -82,7 +104,7 @@ const Overview2 = () => {
                   checked={data.checked}
                   onChange={() => handleCheckboxChange(index)}
                   disabled={index !== 0 && !checkboxes[index - 1].checked}
-                  style={{ width: "20px", height: "20px" }}
+                  style={{ width: "30px", height: "30px" }}
                 />
                 <label
                   className="text-2xl ml-4"
@@ -91,16 +113,34 @@ const Overview2 = () => {
                   {data.buttonText}
                 </label>
               </div>
+              {data.completed && (
+                <div className="text-center">
+                  <p className="blue opacity-35 text-xl">
+                    {data.dataAfterComple1}
+                  </p>
+                  <p className="blue text-4xl font-semibold">
+                    {data.dataAfterComple2}
+                  </p>
+                </div>
+              )}
             </div>
-            <div className="w-1/2 flex flex-col justify-between items-end">
-              {data.completed && <p>jdjfj</p>}
+            <div
+              className={`w-1/2 flex flex-col ${
+                data.completed ? "justify-between" : "justify-end"
+              } items-end`}
+            >
               {data.completed ? (
-                <button
-                  className="bg-transparent w-60 h-14 border border-blue-400"
-                  style={{ color: "blue" }}
-                >
-                  {data.downloadText}
-                </button>
+                <>
+                  <p className="text-gray-500 text-xl font-bold text-center ">
+                    {data.completionDate}
+                  </p>
+                  <button
+                    className="bg-transparent w-60 h-14 border border-blue-400"
+                    style={{ color: "blue" }}
+                  >
+                    {data.downloadText}
+                  </button>
+                </>
               ) : (
                 <button
                   className={`bg-blue-400 w-60 h-14 text-white`}

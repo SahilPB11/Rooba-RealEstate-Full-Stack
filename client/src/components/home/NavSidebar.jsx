@@ -26,7 +26,7 @@ const NavSidebar = () => {
 
   return (
     <div
-    className="flex flex-col bg-white  " // Apply sticky and top-0 to make it stick to the top
+      className="flex flex-col bg-white  " // Apply sticky and top-0 to make it stick to the top
       style={{ width: "320px", height: "1020px" }}
     >
       <div className="w-full h-48 flex items-center justify-center border border-gray-300">
