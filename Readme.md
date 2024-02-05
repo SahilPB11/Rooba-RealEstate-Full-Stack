@@ -2,6 +2,17 @@
 
 🌟 Live Demo: https://rooba-real-estate-full-stack.vercel.app/ 🌟
 
+
+#### Screenshots
+![prop1](https://github.com/SahilPB11/Rooba-RealEstate-Full-Stack/assets/132371638/f6dbf355-6ec1-492a-ac37-f4f71e23c26c)
+![prop2](https://github.com/SahilPB11/Rooba-RealEstate-Full-Stack/assets/132371638/48652270-45a5-4ed0-8a92-e60c9ba3393b)
+![prop4](https://github.com/SahilPB11/Rooba-RealEstate-Full-Stack/assets/132371638/dcd1b6dd-d1fa-4f69-8a9d-83fee8b76cc8)
+![prop5](https://github.com/SahilPB11/Rooba-RealEstate-Full-Stack/assets/132371638/74184c25-37cb-4c30-886a-aa952bca5777)
+![prop6](https://github.com/SahilPB11/Rooba-RealEstate-Full-Stack/assets/132371638/3a795f62-cb52-4534-b2f9-db6845c64b65)
+![prop7](https://github.com/SahilPB11/Rooba-RealEstate-Full-Stack/assets/132371638/a47b0807-d041-4516-be28-7c4ddc300160)
+
+
+
 ## Introduction
 
 Welcome to Rooba Real Estate, an innovative and user-friendly platform that empowers you to effortlessly buy, sell, or rent properties. Embark on a seamless real estate journey with our comprehensive features and intuitive interface.
@@ -16,9 +27,7 @@ Welcome to Rooba Real Estate, an innovative and user-friendly platform that empo
 
 1. Register or log in to Rooba Real Estate using your email address or social media account.
 2. Once logged in, you'll have access to our comprehensive property listings and personalized recommendations.
-3. Explore properties by browsing through our categories or using the location-based search feature.
-4. Save your favorite properties to easily revisit them later and stay updated on their availability.
-5. If you find a property you're interested in, contact the owner or agent directly through our messaging system to schedule a viewing or make an offer.
+
 
 ## Join the Rooba Real Estate Community Today!
 
