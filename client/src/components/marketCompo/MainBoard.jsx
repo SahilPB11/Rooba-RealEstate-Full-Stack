@@ -1,9 +1,9 @@
 import React from "react";
 
 import ThemePark from "./ThemePark";
+import Overview from "./Overview";
 
 const MainBoard = () => {
-
   return (
     <div className="w-full p-10 border border-gray-300">
       <div className="w-1/4 text-sm mb-4 text-gray-300">
@@ -28,6 +28,8 @@ const MainBoard = () => {
       </div>
       {/* theme park site */}
       <ThemePark />
+      {/* Overview Part */}
+      <Overview />
     </div>
   );
 };
