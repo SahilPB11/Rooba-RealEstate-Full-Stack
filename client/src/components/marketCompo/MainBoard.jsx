@@ -5,17 +5,17 @@ import Overview from "./Overview";
 
 const MainBoard = () => {
   return (
-    <div className="w-full p-10 border border-gray-300">
-      <div className="w-1/4 text-sm mb-4 text-gray-300">
-        <div className="flex justify-around">
-          <p className="flex ">
-            Market <img src="./logo/arrow.svg" alt="" srcset="" />
+    <div className="w-full p-4 lg:p-10 border border-gray-300">
+      <div className="w-2/4 text-sm mb-4 text-gray-300">
+        <div className="flex flex-col lg:flex-row justify-around">
+          <p className="mb-2 lg:mb-0">
+            Market <img src="./logo/arrow.svg" alt="" />
           </p>
-          <p className="flex ">
-            Category <img src="./logo/arrow.svg" alt="" srcset="" />
+          <p className="mb-2 lg:mb-0">
+            Category <img src="./logo/arrow.svg" alt="" />
           </p>
-          <p className="flex ">
-            Theme Park Site <img src="./logo/arrow.svg" alt="" srcset="" />
+          <p className="mb-2 lg:mb-0">
+            Theme Park Site <img src="./logo/arrow.svg" alt="" />
           </p>
         </div>
       </div>

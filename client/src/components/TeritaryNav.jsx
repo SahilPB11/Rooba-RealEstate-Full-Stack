@@ -7,7 +7,7 @@ const TertiaryNav = () => {
     <div
       className="border border-gray-300"
       style={{
-        width: "calc(100% - 10px)", // Adjust width based on NavSidebar width
+        width: "calc(100%)", // Adjust width based on NavSidebar width
         height: "102px",
         display: "flex",
         justifyContent: "space-between",
@@ -15,7 +15,7 @@ const TertiaryNav = () => {
       }}
     >
       {/* Tertiary navigation text */}
-      <Link to="/tertiary-link" className="tertiary-link">
+      <Link to="/tertiary-link" className=".tertiary-link">
         Choose your new site
       </Link>
       <div className="flex w-1/6 justify-between items-center">

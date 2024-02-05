@@ -1,16 +1,17 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contextApi/useAuth";
 import axios from "axios";
+
 const NavItem = ({ to, label, onClick }) => (
-  <NavLink
+  <Link
     to={`${to}`}
     onClick={onClick}
     className="w-full h-36 flex items-center justify-center border border-gray-300"
     activeClassName="active"
   >
     {label}
-  </NavLink>
+  </Link>
 );
 
 const NavSidebar = () => {
@@ -20,21 +21,15 @@ const NavSidebar = () => {
   const handleLogout = async () => {
     const res = await axios.get("/user/logout");
     console.log(res);
-    if (res.status == 200) {
+    if (res.status === 200) {
       logout();
-      setTimeout(() => {
-        navigate("/");
-      }, 1500);
+      navigate("/");
     }
   };
 
   return (
-    <div
-      className="flex flex-col bg-white  " // Apply sticky and top-0 to make it stick to the top
-      style={{ width: "320px", height: "1020px" }}
-    >
+    <div className="flex flex-col bg-white md:w-64 lg:w-80">
       <div className="w-full h-48 flex items-center justify-center border border-gray-300">
-        {/* Logo or content for Property 1 */}
         <img src="./logo/logo.svg" alt="" />
       </div>
       <div className="flex-grow">

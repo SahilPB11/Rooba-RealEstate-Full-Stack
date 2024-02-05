@@ -20,7 +20,10 @@ function ThemePark() {
     },
   };
   return (
-    <div className="flex flex-grow border overflow-y-auto"  style={{ border: "4px solid rgba(226, 226, 226, 1) " }}>
+    <div
+      className="flex flex-grow border overflow-y-auto"
+      style={{ border: "4px solid rgba(226, 226, 226, 1) " }}
+    >
       <div className="w-1/2 p-4">
         <div className="p-4 w-full flex flex-col ">
           <h1 className="font-extrabold text-3xl p-4">Theme Park Site</h1>

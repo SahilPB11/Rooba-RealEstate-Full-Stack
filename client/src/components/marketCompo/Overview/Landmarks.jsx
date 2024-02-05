@@ -33,7 +33,9 @@ const Landmarks = () => {
                 width="25px"
                 alt=""
                 className="mr-1"
+                srcset=""
               />
+
               <p className="blue">{landmark.label}</p>
             </div>
             <div className="w-1/2 flex flex-col">

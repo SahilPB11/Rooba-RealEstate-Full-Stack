@@ -2,13 +2,14 @@ import React from "react";
 import TopBar from "../components/marketCompo/TopBar";
 
 const SettingsPage = () => {
+  useEffect(() => {}, []);
   return (
     <div>
       <TopBar />
-      <div className="container mx-auto p-8">
-        <h1 className="text-3xl font-bold mb-8">Account Settings</h1>
+      <div className="container mx-auto p-4 sm:p-8">
+        <h1 className="text-3xl font-bold mb-4 sm:mb-8">Account Settings</h1>
 
-        <div className="max-w-md mx-auto bg-white p-8 border rounded shadow-lg">
+        <div className="max-w-md mx-auto bg-white p-4 sm:p-8 border rounded shadow-lg">
           <div className="mb-4">
             <label
               htmlFor="currentPassword"

@@ -16,6 +16,7 @@
 /* Handle */
 .scroll::-webkit-scrollbar-thumb {
   background: skyblue;
+  border-radius: 4px; /* Adjust radius for a rounded appearance */
 }
 
 /* Handle on hover */
@@ -28,10 +29,6 @@
   background: transparent;
 }
 
-/* Handle on active */
-.scroll::-webkit-scrollbar-track:hover {
-  background: transparent;
-}
 .active {
   font-size: 20px;
   font-weight: 500;
